@@ -21,22 +21,17 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    // allow async-await
+    // allow async-await 2:error 1: warn 0:off
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'semi': ['error', 'always'],
-    'indent': 0,
-    // 'space-before-blocks': ["error", { "functions": "never", "keywords": "never", "classes": "never" }],
-    'space-before-function-paren': ["error", {
+    'semi': 0, // 使用分号
+    'indent': [2, 2], //缩进2个空格
+    'space-before-function-paren': [2, {
       "anonymous": "always",
       "named": "never",
       "asyncArrow": "always"
-    }],
-    // "space-before-function-paren": ["error", "always"]
-    // 'space-before-function-paren': ["error", { "anonymous": "never", "named": "always" }]
-    'no-undef': ["error", {
-      "typeof": false
-    }]
+    }], // 强制在 function的左括号之前使用一致的空格
+    'no-undef': 2, //禁止使用没有定义的变量，除非在／＊global＊／已经申明
   }
 }
